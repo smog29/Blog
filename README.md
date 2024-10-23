@@ -12,7 +12,5 @@ A GraphQL-based journal management system built with Ruby on Rails, enabling use
 ## Getting Started
 
 1. Clone the repository:
-   ```bash
    git clone <repository-url>
    bundle install
-  ```
