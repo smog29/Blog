@@ -59,6 +59,6 @@ group :test do
 end
 gem "graphiql-rails"
 
-gem "graphql", "~> 2.3"
+gem "graphql", "~> 2.4"
 
 gem 'jwt'
