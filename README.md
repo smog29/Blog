@@ -11,14 +11,11 @@ A GraphQL-based journal management system built with Ruby on Rails, enabling use
 
 ## Getting Started
 
-1. Clone the repository:
-  ```
-   git clone <repository-url>
-   bundle install
-   set local env variables:
-      JWT_SECRET={JWT_SECRET}
-      
-   set database variables (config/database.yml)
+* bundle install
+* set local env variables:
+```bash
+  JWT_SECRET={JWT_SECRET}
+```    
+* set database variables (config/database.yml)
 
-   use the url: {website_url}/graphql to access the graphql playground
-  ```
+* use the url: {website_url}/graphql to access the graphql playground
