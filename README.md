@@ -18,4 +18,11 @@ A GraphQL-based journal management system built with Ruby on Rails, enabling use
 ```    
 * set database variables (config/database.yml)
 
-* use the url: {website_url}/graphql to access the graphql playground
+* use the url: {website_url}/graphql to access the graphql playground and schema
+
+* for authentication, use the auth token in the header (optained from the create user or sign in mutation):
+```graphql
+  {
+  "Authorization": "Bearer <token>"
+  }
+```
