@@ -1,5 +1,3 @@
-# spec/services/users/create_user_service_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe Users::CreateUserService, type: :service do

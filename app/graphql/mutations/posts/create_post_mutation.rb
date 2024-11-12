@@ -12,7 +12,7 @@ module Mutations
 
       def resolve(title:, body:, journal_id:)
         ::Posts::CreatePostService.call(
-          title: title, body: body, journal_id: journal_id, current_user: context[:current_user]
+          title:, body:, journal_id:, current_user: context[:current_user]
         )
       end
     end

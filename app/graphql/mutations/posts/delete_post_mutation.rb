@@ -9,7 +9,7 @@ module Mutations
       field :errors, [ String ], null: false
 
       def resolve(id:)
-        ::Posts::DeletePostService.call(id: id, current_user: context[:current_user])
+        ::Posts::DeletePostService.call(id:, current_user: context[:current_user])
       end
     end
   end
