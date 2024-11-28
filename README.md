@@ -1,6 +1,6 @@
-# Journal Management System
+# Blog Management System
 
-A GraphQL-based journal management system built with Ruby on Rails, enabling users to create, read, update, and delete journals, posts, comments, and users. This project features user authentication with JWT tokens and supports efficient data handling through input types and mutations.
+A GraphQL-based blog management system built with Ruby on Rails, enabling users to create, read, update, and delete journals (blogs), posts, comments, and users. This project features user authentication with JWT tokens and supports efficient data handling through input types and mutations.
 
 ## Features
 
