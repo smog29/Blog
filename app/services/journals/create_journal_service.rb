@@ -2,7 +2,6 @@
 module Journals
   class CreateJournalService
     def self.call(title:, description:, current_user:)
-      # Check if the user is authorized
       return { journal: nil, errors: [ "Not Authorized" ] } if current_user.blank?
 
       journal = ::Journal.new(title:, description:, user_id: current_user.id)

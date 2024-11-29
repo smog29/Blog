@@ -8,7 +8,6 @@ module Comments
         return { success: false, errors: [ "Comment not found" ] }
       end
 
-      # Check if the current user is the owner of the comment
       if comment.user_id != current_user&.id
         return { success: false, errors: [ " You are not authorized to delete this comment" ] }
       end

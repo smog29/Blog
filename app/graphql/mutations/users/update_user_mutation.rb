@@ -12,9 +12,9 @@ module Mutations
 
       def resolve(id:, name: nil, password: nil)
         ::Users::UpdateUserService.call(
-          id: id,
-          name: name,
-          password: password,
+          id:,
+          name:,
+          password:,
           current_user: context[:current_user]
         )
       end
