@@ -1,11 +1,11 @@
 module Posts
-  class DeletePostService
+  class DeletePostService < ApplicationService
     def self.call(id:, current_user:)
       post = Post.find_by(id: id)
 
       return { success: false, errors: [ "Post not found" ] } if post.blank?
 
-      if post.journal.user_id != current_user&.id
+      if !authorized?(current_user, post.journal.user_id)
         return { success: false, errors: [ "You are not authorized to delete this post" ] }
       end
 

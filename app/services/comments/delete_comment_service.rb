@@ -1,4 +1,3 @@
-# app/services/comments/delete_comment_service.rb
 module Comments
   class DeleteCommentService
     def self.call(id:, current_user:)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Users
   class UpdateUserService
     def self.call(id:, name: nil, password: nil, current_user:)

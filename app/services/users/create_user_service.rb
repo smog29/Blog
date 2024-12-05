@@ -1,5 +1,3 @@
-# app/services/users/create_user_service.rb
-
 module Users
   class CreateUserService
     def self.call(name:, email:, password:)

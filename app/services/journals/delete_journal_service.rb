@@ -1,4 +1,3 @@
-# app/services/journals/delete_journal_service.rb
 module Journals
   class DeleteJournalService
     def self.call(id:, current_user:)

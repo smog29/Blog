@@ -1,4 +1,3 @@
-# app/services/journals/create_journal_service.rb
 module Journals
   class CreateJournalService
     def self.call(title:, description:, current_user:)
