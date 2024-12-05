@@ -10,10 +10,8 @@ module Mutations
       field :errors, [ String ], null: false
 
       def resolve(content:, post_id:)
-        current_user = context[:current_user]
-
         ::Comments::CreateCommentService.call(
-          content:, post_id:, current_user:
+          content:, post_id:, current_user: context[:current_user]
         )
       end
     end

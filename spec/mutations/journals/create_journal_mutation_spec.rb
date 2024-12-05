@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.describe Mutations::Journals::CreateJournalMutation, type: :request do
   describe '.resolve' do
     let(:user) { create(:user) }
-    let(:response_journal) { create(:journal) }
+    let(:journal) { create(:journal) }
     let(:title) { 'Test Journal Title' }
     let(:description) { 'Test journal description content' }
     let(:mutation) do
@@ -26,7 +26,7 @@ RSpec.describe Mutations::Journals::CreateJournalMutation, type: :request do
 
     before do
       allow(JWT).to receive(:decode).and_return([ { 'user_id' => user.id } ])
-      allow(::Journals::CreateJournalService).to receive(:call).and_return({ journal: response_journal, errors: [] })
+      allow(::Journals::CreateJournalService).to receive(:call).and_return({ journal:, errors: [] })
     end
 
     it 'calls the service with the correct parameters' do
