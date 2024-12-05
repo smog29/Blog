@@ -1,6 +1,12 @@
 module Users
-  class CreateUserService
-    def self.call(name:, email:, password:)
+  class CreateUserService < ApplicationService
+    def initialize(name:, email:, password:)
+      @name = name
+      @email = email
+      @password = password
+    end
+
+    def call
       user = ::User.new(name:, email:, password:)
 
       if user.save
@@ -10,5 +16,9 @@ module Users
         { user: nil, token: nil, errors: user.errors.full_messages }
       end
     end
+
+    private
+
+    attr_reader :name, :email, :password
   end
 end
