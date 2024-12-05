@@ -1,20 +1,30 @@
 module Authentication
-  class SignInService
-    def self.call(email:, password:)
+  class SignInService < ApplicationService
+    def initialize(email:, password:)
+      @email = email
+      @password = password
+    end
+
+    def call
       user = User.find_by(email: email)
 
       if user&.authenticate(password)
         token = JWT.encode({ user_id: user.id }, ENV["JWT_SECRET"], "HS256")
-        {
-          token: token,
-          errors: []
-        }
+        token_response(token, [])
       else
-        {
-          token: nil,
-          errors: [ "Invalid email or password" ]
-        }
+        token_response(nil, [ "Invalid email or password" ])
       end
+    end
+
+    private
+
+    attr_reader :email, :password
+
+    def token_response(token, errors)
+      {
+        token: token,
+        errors: errors
+      }
     end
   end
 end
