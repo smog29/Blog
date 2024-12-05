@@ -11,11 +11,7 @@ RSpec.describe Mutations::Posts::CreatePostMutation, type: :request do
       <<~GQL
         mutation($title: String!, $body: String!, $journalId: ID!) {
           createPost(input: { title: $title, body: $body, journalId: $journalId }) {
-            post {
-              id
-              title
-              body
-            }
+            post { id }
             errors
           }
         }
